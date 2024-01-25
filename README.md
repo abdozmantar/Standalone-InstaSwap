@@ -37,10 +37,10 @@ Welcome file
    - Install [VS C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) 
    - Open Visual Studio under `Workloads -> Desktop & Mobile` menu select `Desktop Development with C++`
    
-2. Clone this repository to your pc. There is three way :  
+2. Clone this repository to your pc. There is two way :  
 - A) Download this repository  as a zip file and extract files in to anywhere you want in your hard drive
 
-- C) Create a  `InstaSwapStandalone` folder anywhere in your hard drive open a terminal window here and run `git clone https://github.com/abdozmantar/Standalone-InstaSwap` command.
+- B) Create a  `InstaSwapStandalone` folder anywhere in your hard drive open a terminal window here and run `git clone https://github.com/abdozmantar/Standalone-InstaSwap` command.
 
 3. After downloading the repository, what you need to do is very simple. Just run the install.bat file and patiently wait for the automatic installer to finish. The automatic installer will download all the necessary library and model files. After the installation, the InstaSwap application will automatically run in your browser.
  
