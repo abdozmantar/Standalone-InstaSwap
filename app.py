@@ -78,4 +78,5 @@ with gr.Blocks() as app:
 
     btn.click(Swap, inputs=[img_input1, img_input2], outputs=img_output)
 
+app.title = "InstaSwap Standalone"
 app.launch(inbrowser=True)
