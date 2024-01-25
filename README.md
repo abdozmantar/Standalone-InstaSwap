@@ -1,6 +1,3 @@
-Welcome file
-Welcome file
-
 <div align="center">
 
   <img src="https://github.com/abdozmantar/Standalone-InstaSwap/blob/main/Logo.png?raw=true?raw=true" alt="logo" width="180px"/>
