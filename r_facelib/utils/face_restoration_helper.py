@@ -8,7 +8,6 @@ from r_facelib.detection import init_detection_model
 from r_facelib.parsing import init_parsing_model
 from r_facelib.utils.misc import img2tensor, imwrite
 
-
 def get_largest_face(det_faces, h, w):
 
     def get_location(val, length):
@@ -43,7 +42,6 @@ def get_center_face(det_faces, h=0, w=0, center=None):
         center_dist.append(dist)
     center_idx = center_dist.index(min(center_dist))
     return det_faces[center_idx], center_idx
-
 
 class FaceRestoreHelper(object):
     """Helper for the face restoration pipeline (base class)."""
