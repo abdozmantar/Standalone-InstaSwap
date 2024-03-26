@@ -11,7 +11,6 @@ from r_facelib.detection.yolov5face.models.common import Conv
 from .retinaface.retinaface import RetinaFace
 from .yolov5face.face_detector import YoloDetector
 
-
 def init_detection_model(model_name, half=False, device='cuda'):
     if 'retinaface' in model_name:
         model = init_retinaface_model(model_name, half, device)
@@ -21,7 +20,6 @@ def init_detection_model(model_name, half=False, device='cuda'):
         raise NotImplementedError(f'{model_name} is not implemented.')
 
     return model
-
 
 def init_retinaface_model(model_name, half=False, device='cuda'):
     if model_name == 'retinaface_resnet50':
