@@ -3,12 +3,10 @@ from numpy.linalg import inv, lstsq
 from numpy.linalg import matrix_rank as rank
 from numpy.linalg import norm
 
-
 class MatlabCp2tormException(Exception):
 
     def __str__(self):
         return 'In File {}:{}'.format(__file__, super.__str__(self))
-
 
 def tformfwd(trans, uv):
     """
