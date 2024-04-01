@@ -22,13 +22,11 @@ from scripts.instaswap_logger import logger
 from scripts.instaswap_swapper import swap_face, get_current_faces_model, analyze_faces
 import folder_paths
 
-
 def get_models():
     models_path = os.path.join(folder_paths.models_dir,"insightface/*")
     models = glob.glob(models_path)
     models = [x for x in models if x.endswith(".onnx") or x.endswith(".pth")]
     return models
-
 
 class FaceSwapScript(scripts.Script):
 
