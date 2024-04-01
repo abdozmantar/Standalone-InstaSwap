@@ -9,7 +9,6 @@ from scripts.r_archs.vqgan_arch import *
 from basicsr.utils import get_root_logger
 from basicsr.utils.registry import ARCH_REGISTRY
 
-
 def calc_mean_std(feat, eps=1e-5):
     """Calculate mean and std for adaptive_instance_normalization.
 
@@ -42,7 +41,6 @@ def adaptive_instance_normalization(content_feat, style_feat):
     content_mean, content_std = calc_mean_std(content_feat)
     normalized_feat = (content_feat - content_mean.expand(size)) / content_std.expand(size)
     return normalized_feat * style_std.expand(size) + style_mean.expand(size)
-
 
 class PositionEmbeddingSine(nn.Module):
     """
