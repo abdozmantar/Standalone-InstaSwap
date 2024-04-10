@@ -19,6 +19,7 @@ from PIL import Image
 
 import insightface
 from insightface.app.common import Face
+
 try:
     import torch.cuda as cuda
 except:
@@ -27,7 +28,6 @@ except:
 from scripts.instaswap_logger import logger
 from instaswap_utils import move_path, get_image_md5hash
 import folder_paths
-
 import warnings
 
 np.warnings = warnings
