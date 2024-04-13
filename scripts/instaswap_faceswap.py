@@ -8,10 +8,9 @@
 #----------------------------------------------#
 
 import os, glob
-
 from PIL import Image
-
 import modules.scripts as scripts
+
 # from modules.upscaler import Upscaler, UpscalerData
 from modules import scripts, shared, images, scripts_postprocessing
 from modules.processing import (
