@@ -11,15 +11,12 @@ import copy
 from basicsr.utils import get_root_logger
 from basicsr.utils.registry import ARCH_REGISTRY
 
-
 def normalize(in_channels):
     return torch.nn.GroupNorm(num_groups=32, num_channels=in_channels, eps=1e-6, affine=True)
     
-
 @torch.jit.script
 def swish(x):
     return x*torch.sigmoid(x)
-
 
 #  Define VQVAE classes
 class VectorQuantizer(nn.Module):
