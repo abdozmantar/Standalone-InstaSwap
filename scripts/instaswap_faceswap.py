@@ -10,6 +10,7 @@
 import os, glob
 from PIL import Image
 import modules.scripts as scripts
+
 # from modules.upscaler import Upscaler, UpscalerData
 from modules import scripts, shared, images, scripts_postprocessing
 from modules.processing import (
@@ -102,7 +103,7 @@ class FaceSwapScript(scripts.Script):
     def postprocess_batch(self, p, *args, **kwargs):
         if self.enable:
             images = kwargs["images"]
-
+            
     def postprocess_image(self, p, script_pp: scripts.PostprocessImageArgs, *args):
         if self.enable and self.swap_in_generated:
             if self.source is not None:
