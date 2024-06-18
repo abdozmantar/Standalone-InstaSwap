@@ -4,7 +4,6 @@ import torch.nn.functional as F
 
 from .resnet import ResNet18
 
-
 class ConvBNReLU(nn.Module):
 
     def __init__(self, in_chan, out_chan, ks=3, stride=1, padding=1):
