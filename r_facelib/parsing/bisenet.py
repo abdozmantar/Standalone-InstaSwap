@@ -15,7 +15,6 @@ class ConvBNReLU(nn.Module):
         x = F.relu(self.bn(x))
         return x
 
-
 class BiSeNetOutput(nn.Module):
 
     def __init__(self, in_chan, mid_chan, num_class):
