@@ -79,7 +79,6 @@ def generate_config(network_name):
 
 
 class RetinaFace(nn.Module):
-
     def __init__(self, network_name='resnet50', half=False, phase='test'):
         super(RetinaFace, self).__init__()
         self.half_inference = half
