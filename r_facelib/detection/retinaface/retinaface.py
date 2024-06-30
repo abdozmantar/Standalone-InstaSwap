@@ -22,7 +22,6 @@ elif hasattr(torch,'dml'):
 else:
     device = torch.device('cpu')
 
-
 def generate_config(network_name):
 
     cfg_mnet = {
