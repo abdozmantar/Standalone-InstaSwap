@@ -4,12 +4,11 @@ import os.path as osp
 import torch
 from torch.hub import download_url_to_file, get_dir
 from urllib.parse import urlparse
+
 # from basicsr.utils.download_util import download_file_from_google_drive
 #import gdown
 
-
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 
 def download_pretrained_models(file_ids, save_path_root):
     os.makedirs(save_path_root, exist_ok=True)
@@ -22,8 +21,10 @@ def download_pretrained_models(file_ids, save_path_root):
             if user_response.lower() == 'y':
                 print(f'Covering {file_name} to {save_path}')
                 print("skipping gdown in facelib/utils/misc.py "+file_url)
+                
                 #gdown.download(file_url, save_path, quiet=False)
                 # download_file_from_google_drive(file_id, save_path)
+            
             elif user_response.lower() == 'n':
                 print(f'Skipping {file_name}')
             else:
@@ -31,6 +32,7 @@ def download_pretrained_models(file_ids, save_path_root):
         else:
             print(f'Downloading {file_name} to {save_path}')
             print("skipping gdown in facelib/utils/misc.py "+file_url)
+            
             #gdown.download(file_url, save_path, quiet=False)
             # download_file_from_google_drive(file_id, save_path)
 
