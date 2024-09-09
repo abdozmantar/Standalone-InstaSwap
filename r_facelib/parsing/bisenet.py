@@ -39,10 +39,12 @@ class AttentionRefinementModule(nn.Module):
 
     def forward(self, x):
         feat = self.conv(x)
+        
         atten = F.avg_pool2d(feat, feat.size()[2:])
         atten = self.conv_atten(atten)
         atten = self.bn_atten(atten)
         atten = self.sigmoid_atten(atten)
+        
         out = torch.mul(feat, atten)
         return out
 
@@ -94,11 +96,13 @@ class FeatureFusionModule(nn.Module):
     def forward(self, fsp, fcp):
         fcat = torch.cat([fsp, fcp], dim=1)
         feat = self.convblk(fcat)
+        
         atten = F.avg_pool2d(feat, feat.size()[2:])
         atten = self.conv1(atten)
         atten = self.relu(atten)
         atten = self.conv2(atten)
         atten = self.sigmoid(atten)
+        
         feat_atten = torch.mul(feat, atten)
         feat_out = feat_atten + feat
         return feat_out
