@@ -13,10 +13,12 @@ def compute_increased_bbox(bbox, increase_area, preserve_aspect=True):
         height_increase = max(increase_area, ((1 + 2 * increase_area) * width - height) / (2 * height))
     else:
         width_increase = height_increase = increase_area
+        
     left = int(left - width_increase * width)
     top = int(top - height_increase * height)
     right = int(right + width_increase * width)
     bot = int(bot + height_increase * height)
+    
     return (left, top, right, bot)
 
 
@@ -27,7 +29,6 @@ def get_valid_bboxes(bboxes, h, w):
     bottom = min(bboxes[3], h)
     return (left, top, right, bottom)
 
-
 def align_crop_face_landmarks(img,
                               landmarks,
                               output_size,
@@ -35,6 +36,7 @@ def align_crop_face_landmarks(img,
                               enable_padding=True,
                               return_inverse_affine=False,
                               shrink_ratio=(1, 1)):
+                                  
     """Align and crop face with landmarks.
 
     The output_size and transform_size are based on width. The height is
@@ -52,7 +54,6 @@ def align_crop_face_landmarks(img,
         enable_padding (float): Default: True.
         shrink_ratio (float | tuple[float] | list[float]): Shring the whole
             face for height and width (crop larger area). Default: (1, 1).
-
     Returns:
         (Numpy array): Cropped face.
     """
