@@ -9,8 +9,6 @@
 
 import copy
 import os
-import shutil
-from dataclasses import dataclass
 from typing import List, Union
 import cv2
 import numpy as np
@@ -24,7 +22,7 @@ except:
     cuda = None
 
 from scripts.instaswap_logger import logger
-from instaswap_utils import move_path, get_image_md5hash
+from instaswap_utils import get_image_md5hash
 import folder_paths
 import warnings
 

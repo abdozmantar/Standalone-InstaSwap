@@ -19,7 +19,7 @@ from modules.processing import (
 )
 
 from scripts.instaswap_logger import logger
-from scripts.instaswap_swapper import swap_face, get_current_faces_model, analyze_faces
+from scripts.instaswap_swapper import swap_face
 import folder_paths
 
 def get_models():

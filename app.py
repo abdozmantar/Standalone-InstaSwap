@@ -1,25 +1,9 @@
 ﻿import gradio as gr
-import os, glob, sys
-from dataclasses import dataclass
-import torch
-from torchvision.transforms.functional import normalize
-import numpy as np
-import cv2
-from PIL import Image
-from modules.processing import StableDiffusionProcessingImg2Img
+import os
 import folder_paths
-from scripts.instaswap_faceswap import FaceSwapScript, get_models, get_current_faces_model, analyze_faces
 from scripts.instaswap_logger import logger
-from instaswap_utils import batch_tensor_to_pil, batched_pil_to_tensor, tensor_to_pil, img2tensor, tensor2img, move_path, save_face_model, load_face_model
-from instaswap_log_patch import apply_logging_patch
-from r_facelib.utils.face_restoration_helper import FaceRestoreHelper
-from basicsr.utils.registry import ARCH_REGISTRY
-import scripts.r_archs.codeformer_arch
-from modules.upscaler import UpscalerData
-from modules.face_restoration import FaceRestoration
-from scripts.instaswap_swapper import swap_face, get_current_faces_model, analyze_faces
+from scripts.instaswap_swapper import swap_face
 from basicsr.utils.download_util import load_file_from_url
-
 
 #-----------------------------------
 # MODELS
