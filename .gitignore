@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+venv.bak/
+env.bak/
+
+
+models/
+input/

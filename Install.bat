@@ -12,7 +12,7 @@ echo Checking for Python 3.10...
 echo -----------------------------------------------------------
 echo. 
 
-py -3.10 --version >nul 2>&1
+python --version >nul 2>&1
 if %errorlevel%==0 (
     echo Python 3.10 is already installed.
 ) else (
@@ -28,17 +28,17 @@ if %errorlevel%==0 (
 
 echo Creating virtual environment...
 echo -----------------------------------------------------------
-py -3.10 -m venv venv
+python -m venv venv
 echo. 
 echo. 
 
 echo Updating pip and wheel...
 echo -----------------------------------------------------------
-venv\Scripts\python.exe -m pip install --upgrade pip wheel
-venv\Scripts\python.exe -m pip install tqdm
-venv\Scripts\python.exe -m pip install packaging
-venv\Scripts\python.exe -m pip install safetensors
-venv\Scripts\python.exe -m pip install gradio
+%cd%\venv\Scripts\python.exe -m pip install --upgrade pip wheel
+%cd%\venv\Scripts\python.exe -m pip install tqdm
+%cd%\venv\Scripts\python.exe -m pip install packaging
+%cd%\venv\Scripts\python.exe -m pip install safetensors
+%cd%\venv\Scripts\python.exe -m pip install gradio
 echo. 
 echo. 
 
@@ -47,18 +47,28 @@ echo -----------------------------------------------------------
 nvidia-smi >nul 2>&1
 if %errorlevel%==0 (
     echo Installing PyTorch with GPU support...
-venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+    %cd%\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 ) else (
     echo Installing PyTorch without GPU support...
-    venv\Scripts\pip.exe install torch
+    %cd%\venv\Scripts\pip.exe install torch
 )
 
-echo Install the packages...
+echo Installing the packages...
 echo -----------------------------------------------------------
-venv\Scripts\python.exe install.py
+if exist install.py (
+    echo Running install.py script...
+    %cd%\venv\Scripts\python.exe install.py
+) else (
+    echo install.py not found. Skipping installation step...
+)
 echo. 
 echo. 
 echo Launching app...
 echo -----------------------------------------------------------
-venv\Scripts\python.exe app.py
+if exist app.py (
+    %cd%\venv\Scripts\python.exe app.py
+) else (
+    echo app.py not found. Exiting...
+)
+
 @pause
